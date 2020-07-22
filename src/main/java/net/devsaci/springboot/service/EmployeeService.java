@@ -2,6 +2,8 @@ package net.devsaci.springboot.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+
 import net.devsaci.springboot.model.Employee;
 
 public interface EmployeeService {
@@ -12,5 +14,7 @@ public interface EmployeeService {
 	Employee getEmployeeById(Long id);
 	
 	void deleteEmployeeById(long id);
+	
+	Page<Employee> findPaginated(int pageNo,int pagesize);
 	
 }
