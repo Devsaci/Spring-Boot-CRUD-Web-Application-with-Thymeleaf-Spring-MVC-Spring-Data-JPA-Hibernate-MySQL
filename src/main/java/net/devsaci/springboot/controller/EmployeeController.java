@@ -23,8 +23,7 @@ public class EmployeeController {
 	// display list of employees
 	@GetMapping("/")
 	public String viewHomePage(Model model) {
-		model.addAttribute("listEmployees", employeeService.getAllEmployees());
-		return "index";
+		return findPaginated(1, model);
 	}
 
 	@GetMapping("/showNewEmployeeForm")
